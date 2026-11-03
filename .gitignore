@@ -8,7 +8,6 @@ agents.md
 .wrangler
 /.svelte-kit
 /build
-/src/articles/
 
 # OS
 .DS_Store
