@@ -4,6 +4,7 @@ title: Affirmation
 date: 2024-11-06 07:11 -0600
 category: pages
 author: papertek
+published: false
 ---
 
 ## Hello

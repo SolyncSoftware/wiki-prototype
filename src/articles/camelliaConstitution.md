@@ -13,7 +13,7 @@ author: Camellia Server Staff
     <div id="stupidFuckLine"></div>
     This page is no longer being updated as of 9/22/2024.
     <br />
-    <a href="https://alpha.camellia.wiki/community/server/constitution">Click here to view the supported article.</a>
+    <a href="https://wiki.solync.org/community/server/constitution">Click here to view the supported article.</a>
 </div>
 
 > Go to the [Staff Guidelines](/staffGuidelines.html).

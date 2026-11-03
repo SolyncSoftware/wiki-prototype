@@ -22,7 +22,7 @@
 <main>
 	<TitleContainer title="Welcome to the Camellia Wiki" {subtitle} />
 	{#snippet subtitle()}
-		Where most of Camellia's work is documented. Including the fandom.
+		This is a prototype website to test Wiki styles and customization options.
 	{/snippet}
 	<div
 		class="cardBackground bg-base-100 border-base-300 mb-18 min-h-181.75 max-w-305 gap-2.5 p-8 rounded-box flex flex-col border-2 shadow-[0_8px_32px_0_var(--wiki-shadow-strong-color)]"

@@ -5,7 +5,6 @@
 	import Header from '$lib/components/Header.svelte';
 	import Modal from '$lib/components/Modal.svelte';
 	import Toaster from '$lib/components/Toaster.svelte';
-	import SiteDisclaimer from '$lib/components/SiteDisclaimer.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import type { LayoutProps } from './$types';
 
@@ -27,5 +26,4 @@
 {@render children()}
 <Modal />
 <Toaster />
-<SiteDisclaimer />
 <Footer />
