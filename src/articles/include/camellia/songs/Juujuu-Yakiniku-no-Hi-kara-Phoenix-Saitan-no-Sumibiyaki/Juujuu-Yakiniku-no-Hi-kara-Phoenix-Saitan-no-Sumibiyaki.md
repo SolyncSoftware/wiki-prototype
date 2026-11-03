@@ -1,0 +1,32 @@
+---
+layout: post
+title: 'じゅーじゅー♥焼肉の火からフェニックス！？～再誕の†炭火焼き～'
+categories: posts
+author: KatGrrrl
+description: じゅーじゅー♥焼肉の火からフェニックス！？～再誕の†炭火焼き～ song page
+permalink: camellia/discography/:title
+---
+
+## Overview
+
+### じゅーじゅー♥焼肉の火からフェニックス！？～再誕の†炭火焼き～
+
+_じゅーじゅー♥焼肉の火からフェニックス！？～再誕の†炭火焼き～_ is a song by [かめりあ](</camellia>) feat. [ななひら](#) first released on 2015-11-13.
+
+- Composition: かめりあ
+- Lyrics: かめりあ
+- Vocals: ななひら
+- Length: 01:59
+- BPM: 180
+- Album Appearances: [ふぉーす！](</camellia/discography/Force>)
+- Game Appearances: [SOUND VOLTEX III GRAVITY WARS](https://remywiki.com/AC_SDVX_III) and [BeatStream アニムトライヴ](https://remywiki.com/AC_BST_AnimTribe)
+
+### じゅーじゅー♥焼肉の火からフェニックス！？～再誕の†炭火焼き～ -ver. 《真》-
+
+_じゅーじゅー♥焼肉の火からフェニックス！？～再誕の†炭火焼き～ -ver. 《真》-_ is a song by [かめりあ](</camellia>) feat. [ななひら](#) first released on 2017-12-29.
+
+- Composition: かめりあ
+- Lyrics: かめりあ
+- Vocals: ななひら
+- Length: 04:46
+- Album Appearances: [ふぉーす！](</camellia/discography/Force>)

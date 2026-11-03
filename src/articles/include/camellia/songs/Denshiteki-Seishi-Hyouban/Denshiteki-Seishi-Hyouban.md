@@ -1,0 +1,20 @@
+---
+layout: post
+title: '電子的生死表現'
+categories: posts
+author: KatGrrrl
+description: 電子的生死表現 song page
+permalink: camellia/discography/:title
+---
+
+## Overview
+
+### 電子的生死表現
+
+_電子的生死表現_ is a song by [かめりあ](</camellia>) (Camellia) first released on 2013-08-12.
+
+- Composition: かめりあ
+- Lyrics: かめりあ
+- Vocals: 初音ミク
+- Length: 04:08
+- Album Appearances: [Stance on Wave](</camellia/discography/Stance-on-Wave>)

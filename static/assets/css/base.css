@@ -1,0 +1,926 @@
+@charset "UTF-8";
+/* HEADS UP!!! DO NOT EDIT NORMAL .CSS FILES!!!!! */
+/* ONLY EDIT .SCSS FILES!!!!!!! */
+/* Global elements, such as headers, footers, and body. */
+/* very dark theme, tried to keep this simple */
+html {
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+	scroll-padding-top: 87px;
+}
+
+*,
+*:before,
+*:after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Scrollbar */
+/* Common styles for Chrome, Safari, Edge */
+::-webkit-scrollbar {
+	width: 0px;
+	height: 10px;
+	-webkit-border-radius: 100px;
+	background-color: var(--color-base-200);
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--color-neutral);
+	border: 2px solid transparent;
+	-webkit-border-radius: 100px;
+	background-clip: padding-box;
+	min-height: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: var(--color-base-content);
+}
+
+/* Firefox */
+* {
+	scrollbar-width: none;
+	scrollbar-color: var(--color-primary) transparent;
+}
+
+/* Edge */
+body {
+	font-family: var(--font-default);
+	font-size: 16px;
+	background: var(--wiki-page-background);
+	color: var(--color-base-content);
+	min-height: 100vh;
+	-webkit-font-smoothing: subpixel-antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+	backface-visibility: hidden;
+}
+
+/* align main content in the page using flexbox. this might not be flexible. */
+main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex: 1;
+}
+
+/* classes for text */
+main .centerItem {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+main .centerItem figure {
+	align-self: center;
+	margin-bottom: 0;
+	margin-left: 0;
+}
+
+main .itemWithSmallFigure {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+main .itemWithSmallFigure figure {
+	width: 70%;
+	align-self: center;
+	margin-bottom: 0;
+}
+
+.bitch {
+	text-align: center;
+}
+
+main .makeBig {
+	font-size: 25.63px;
+	font-weight: 600;
+}
+
+h1 {
+	font-size: 36.49px;
+	font-weight: 600;
+}
+
+h2 {
+	font-size: 32.44px;
+	font-weight: 600;
+}
+
+h3 {
+	font-size: 28.83px;
+	font-weight: 600;
+}
+
+h4 {
+	font-size: 25.63px;
+	font-weight: 600;
+}
+
+h5 {
+	font-size: 22.78px;
+	font-weight: 600;
+}
+
+h6 {
+	font-size: 20.25px;
+	font-weight: 600;
+}
+
+p {
+	font-size: 18px;
+}
+
+/* links */
+a:not(.btn) {
+	color: var(--color-primary);
+	text-decoration: none;
+}
+
+a:not(.btn):hover {
+	color: var(--color-warning);
+	text-decoration: underline;
+}
+
+/* adds a little line to the bottom of a button. a little jank but works */
+.specialLine a:hover::after {
+	background: var(--hoverColor) 0% 0% no-repeat padding-box;
+	content: '';
+	position: absolute;
+	margin-top: 64px;
+	width: 240px;
+	height: 4px;
+	border-radius: 2px;
+}
+
+/* cards */
+.card {
+	max-width: 827px;
+	height: fit-content;
+	line-height: 26px;
+}
+
+.miniCard {
+	height: fit-content;
+	block-size: fit-content;
+	line-height: 26px;
+	margin-block-end: 10px;
+	padding-bottom: 32px;
+}
+.miniCard .cardContents p {
+	padding-bottom: 16px;
+}
+.miniCard .card-actions {
+	margin-left: 32px;
+	margin-right: 32px;
+}
+
+.miniCard .cardHeader {
+	margin-bottom: 16px;
+}
+
+.albumContainer {
+	display: flex;
+	flex-direction: row;
+}
+.albumContainer img {
+	width: 156px;
+	height: 156px;
+	margin-left: 32px;
+	border-radius: 20px;
+	border: 5px solid var(--color-base-300);
+}
+.albumContainer .albumContentsContainer {
+	display: flex;
+	flex-direction: column;
+	margin-left: 16px;
+}
+.albumContainer .albumContentsContainer h5 {
+	margin-bottom: 8px;
+}
+.albumContainer .albumContentsContainer ol {
+	padding: 0;
+	padding-left: 16px;
+}
+.albumContainer .albumContentsContainer hr {
+	background: var(--color-base-300) 0% 0% no-repeat padding-box;
+	height: 4px;
+	width: 333px;
+	margin-left: 0;
+	margin-top: 8px;
+	border-radius: 6px;
+}
+.albumContainer .albumContentsContainer p {
+	padding-left: 0;
+}
+
+blockquote {
+	position: relative;
+	background: var(--color-base-300);
+	border-left: solid 4px var(--color-secondary);
+	line-height: 1.8;
+	border-radius: 10px;
+	margin-left: 32px;
+	margin-right: 32px;
+	margin-bottom: 32px;
+	padding-top: 1em;
+	box-shadow: 0px 2px 6px 0px var(--wiki-shadow-color);
+	/* we really want to fix this */
+}
+blockquote p {
+	font-style: italic;
+	padding: 0 1em 1em 1em !important;
+}
+
+blockquote.disclaimer {
+	border-left: solid 4px var(--color-warning);
+	background: color-mix(in srgb, var(--color-warning) 15.7%, transparent);
+}
+
+blockquote.caution {
+	border-left: solid 4px var(--color-error);
+	background: color-mix(in srgb, var(--color-error) 15.7%, transparent);
+}
+
+blockquote.tip {
+	border-top: solid 4px var(--color-secondary);
+	border-left: none;
+	background: color-mix(in srgb, var(--color-secondary) 42.4%, transparent);
+}
+
+.cardHeader {
+	background:
+		linear-gradient(
+			180deg,
+			color-mix(in srgb, var(--color-accent) 30%, transparent) 0%,
+			color-mix(in srgb, var(--color-primary) 12%, transparent) 50.52%,
+			transparent 100%
+		),
+		var(--color-accent);
+	display: flex;
+	justify-content: space-between;
+	border-top: 2px solid var(--color-base-300);
+	border-bottom: 2px solid var(--color-base-300);
+	height: 84px;
+	width: 100%;
+	/* hacky way to fix padding on card headers */
+}
+.cardHeader:first-of-type {
+	border-top: 1px solid var(--color-base-300);
+	border-top-right-radius: var(--radius-box);
+	border-top-left-radius: var(--radius-box);
+}
+.cardHeader p,
+.cardHeader a {
+	font-size: 21px;
+	margin: 4px;
+	align-self: center;
+	justify-self: flex-end;
+}
+.cardHeader p {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+.cardHeader a:first-of-type {
+	margin-left: auto;
+}
+.cardHeader a:last-of-type {
+	margin-right: 46px;
+}
+
+.header-permalink {
+	margin-left: 32px;
+	margin-right: 32px;
+	line-height: initial;
+	overflow: hidden;
+	align-self: center;
+	color: var(--color-neutral);
+	font-size: 24px;
+	float: right;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-ms-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+	cursor: pointer;
+}
+.header-permalink:hover {
+	color: var(--color-base-content);
+}
+
+.cardContents h3 .header-permalink {
+	margin-right: 0;
+}
+
+.card .cardHeader {
+	display: flex;
+	margin-bottom: 32px;
+}
+
+.card p,
+.miniCard p {
+	padding-left: 48px;
+	padding-right: 48px;
+	line-height: normal;
+}
+
+.card h3 {
+	margin-left: 32px;
+	margin-right: 32px;
+	padding-bottom: 8px;
+	margin-bottom: 8px;
+	border-bottom: solid 1px var(--color-neutral);
+}
+
+/* its pretty weird to look at for now but it works -john */
+/* since minicard is only in the homepage, apply this */
+.miniCard h3 {
+	margin-top: 16px;
+	margin-left: 32px;
+	margin-bottom: 8px;
+}
+
+.card h4,
+.miniCard h4 {
+	margin-left: 32px;
+	margin-bottom: 8px;
+}
+
+.card h2,
+.miniCard h2 {
+	margin-left: 32px;
+	margin-right: 32px;
+	line-height: initial;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	align-self: center;
+}
+
+.miniCard:last-child {
+	margin-bottom: 0;
+}
+
+.card p:first-child {
+	padding-top: 0;
+}
+
+li p {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+
+/* lists */
+.card ol,
+.card ul {
+	padding-left: 0;
+	list-style-type: none;
+	margin-left: 32px;
+	margin-right: 32px;
+	margin-bottom: 32px;
+	background: var(--color-base-300);
+	border-radius: var(--radius-box);
+	box-shadow: 0px 2px 6px 0px var(--wiki-shadow-color);
+}
+.card ol li,
+.card ul li {
+	display: flex;
+	align-items: center;
+	position: relative;
+	font-size: 18px;
+	padding: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	border-bottom: 1px solid var(--color-neutral);
+}
+.card ol li a,
+.card ul li a {
+	display: contents;
+}
+.card ol li::before,
+.card ul li::before {
+	content: '●';
+	align-self: flex-start;
+	font-size: 10px;
+	padding-right: 10px;
+	left: 0;
+}
+.card ol li:last-child,
+.card ul li:last-child {
+	margin-bottom: 0;
+	border-bottom: none;
+}
+
+/* add a counter to ordered lists */
+.card ol {
+	counter-reset: item;
+}
+.card ol li::before {
+	font-size: 18px;
+	content: counter(item) '.';
+	counter-increment: item;
+}
+
+.miniCard ol,
+.miniCard ul {
+	padding-left: 0;
+	list-style-type: none;
+	margin-left: 32px;
+	margin-right: 32px;
+}
+.miniCard ol li,
+.miniCard ul li {
+	display: flex;
+	align-items: center;
+	position: relative;
+	line-height: 26px;
+	font-size: 18px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 8px;
+}
+.miniCard ol li a,
+.miniCard ul li a {
+	display: contents;
+}
+.miniCard ol li::before,
+.miniCard ul li::before {
+	content: '●';
+	font-size: 10px;
+	padding-right: 10px;
+	color: var(--color-primary);
+	left: 0;
+}
+.miniCard ol li:first-child,
+.miniCard ul li:first-child {
+	padding-top: 0;
+}
+.miniCard ol li:last-child,
+.miniCard ul li:last-child {
+	padding-bottom: 0;
+}
+
+/* add a counter to ordered lists */
+.miniCard ol {
+	counter-reset: item;
+}
+.miniCard ol li::before {
+	font-size: 18px;
+	content: counter(item) '.';
+	counter-increment: item;
+}
+
+.card h2:before,
+.card h2:before,
+.miniCard h2:before,
+.miniCard h2:before {
+	content: '';
+	display: inline-block;
+	background: var(--color-secondary) 0% 0% no-repeat padding-box;
+	height: 20px;
+	margin-right: 8px;
+	width: 4px;
+	position: inherit;
+	border-radius: 2px;
+}
+
+.card h3:before,
+.card h3:before,
+.miniCard h3:before,
+.miniCard h3:before {
+	content: '';
+	display: inline-block;
+	background: var(--color-secondary) 0% 0% no-repeat padding-box;
+	height: 17px;
+	margin-right: 8px;
+	width: 4px;
+	position: inherit;
+	border-radius: 2px;
+}
+
+.cardContents p {
+	padding-left: 32px;
+	padding-right: 32px;
+	padding-bottom: 32px;
+	line-height: 26px;
+}
+
+.vertLine {
+	background: var(--color-neutral) 0% 0% no-repeat padding-box;
+	width: auto;
+	margin-left: 8px;
+	margin-right: 8px;
+	height: 1px;
+}
+
+/* lets dupe vertLine because there *is* a way to change its color */
+hr {
+	background: var(--color-neutral) 0% 0% no-repeat padding-box;
+	width: auto;
+	margin-left: 32px;
+	margin-right: 32px;
+	margin-bottom: 8px;
+	height: 1px;
+	border: 0;
+}
+
+.horiLine {
+	background: var(--color-neutral) 0% 0% no-repeat padding-box;
+	width: 1px;
+	height: auto;
+	margin-top: 8px;
+	margin-bottom: 8px;
+	margin-right: 8px;
+}
+
+.sectionLine {
+	background: var(--color-neutral) 0% 0% no-repeat padding-box;
+	width: auto;
+	margin-top: 8px;
+	margin-left: 8px;
+	margin-right: 8px;
+	height: 2px;
+}
+
+/* masonry layout. this is cool */
+.masonryLayout {
+	--masonry-gap: 10px;
+	--masonry-brick-width: 304px;
+	column-gap: var(--masonry-gap);
+	column-fill: initial;
+	column-width: var(--masonry-brick-width);
+}
+.masonryLayout > *:not(.card) {
+	break-inside: avoid;
+	margin-bottom: var(--masonry-gap);
+}
+@supports (grid-template-rows: masonry) {
+	.masonryLayout {
+		display: grid;
+		gap: var(--masonry-gap);
+		grid-template-rows: masonry;
+		grid-template-columns: repeat(auto-fill, minmax(var(--masonry-brick-width), 1fr));
+		align-tracks: stretch;
+	}
+	.masonryLayout > *:not(.card) {
+		margin-bottom: initial;
+	}
+}
+
+/* jank ass wedge code */
+#contentWedge {
+	flex-shrink: 0;
+	flex-direction: column;
+	background: var(--color-base-300);
+	border-radius: var(--radius-box);
+	width: 283px;
+}
+#contentWedge #wedgeContainer {
+	position: sticky;
+	padding: 16px;
+}
+#contentWedge #wedgeContainer hr {
+	margin-top: 4px;
+	margin-bottom: 10px;
+	margin-left: 0;
+	margin-right: 0;
+	height: 2px;
+}
+#contentWedge #wedgeContainer #wedgeItems {
+	display: block;
+	overflow-y: scroll;
+	overflow: auto;
+	font-size: 18px;
+	font-weight: 500;
+	max-height: calc(100vh - 144px);
+}
+#contentWedge #wedgeContainer #wedgeItems ul {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	font-weight: 600;
+}
+#contentWedge #wedgeContainer #wedgeItems ul li {
+	margin-left: 1.2em;
+}
+#contentWedge #wedgeContainer #wedgeItems ul li::marker {
+	color: var(--color-primary);
+	transition: all 0.2s ease-in-out;
+}
+#contentWedge #wedgeContainer #wedgeItems ul li:hover::marker {
+	color: var(--color-warning);
+}
+#contentWedge #wedgeContainer #wedgeItems ul li.active::marker {
+	color: var(--color-base-content);
+}
+#contentWedge #wedgeContainer #wedgeItems ul li ul {
+	font-weight: 500;
+	margin-top: 8px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+#contentWedge #wedgeContainer #wedgeItems ul li ul li::marker {
+	content: '•  ';
+}
+#contentWedge #wedgeContainer.sticky {
+	top: 64px;
+	position: sticky;
+}
+
+#wedgeItems a {
+	display: block;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-ms-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+
+#wedgeItems li.active > a {
+	color: var(--color-base-content);
+}
+
+/* homepage content wedge */
+#navWedge {
+	display: flex;
+	flex-shrink: 0;
+	flex-direction: column;
+	background:
+		linear-gradient(
+			180deg,
+			transparent 0%,
+			color-mix(in srgb, var(--color-primary) 8%, transparent) 51.04%,
+			color-mix(in srgb, var(--color-accent) 20%, transparent) 100%
+		),
+		var(--color-base-200);
+	border-radius: var(--radius-box);
+	width: 283px;
+}
+#navWedge #navWedgeContainer {
+	position: sticky;
+	padding: 16px;
+}
+#navWedge #navWedgeContainer hr {
+	margin-top: 8px;
+	margin-bottom: 8px;
+	margin-left: 0;
+	margin-right: 0;
+	height: 2px;
+}
+#navWedge #navWedgeContainer #navWedgeItems {
+	display: block;
+	overflow-y: scroll;
+	overflow: auto;
+	font-size: 18px;
+	font-weight: 500;
+}
+#navWedge #navWedgeContainer #navWedgeItems h3:first-child {
+	margin-top: 0;
+}
+#navWedge #navWedgeContainer #navWedgeItems h3 {
+	margin-bottom: 8px;
+}
+#navWedge #navWedgeContainer #navWedgeItems h3::before {
+	content: '';
+	display: inline-block;
+	background: var(--color-secondary) 0% 0% no-repeat padding-box;
+	height: 17px;
+	margin-right: 8px;
+	width: 4px;
+	position: inherit;
+	border-radius: 2px;
+}
+#navWedge #navWedgeContainer #navWedgeItems ul {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	padding: 0 8px 8px 8px;
+	width: 100%;
+	overflow: auto;
+}
+#navWedge #navWedgeContainer.sticky {
+	top: 64px;
+	position: sticky;
+}
+
+/* scroll to top button */
+#scrollToTop {
+	float: right;
+	position: fixed;
+	bottom: 0;
+	/* keep it to the bottom right of page */
+	right: 0;
+	margin: 32px;
+	opacity: 60%;
+	cursor: pointer;
+	-webkit-transition: opacity 0.25s ease-in-out;
+	-moz-transition: opacity 0.25s ease-in-out;
+	-ms-transition: opacity 0.25s ease-in-out;
+	-o-transition: opacity 0.25s ease-in-out;
+	transition: opacity 0.25s ease-in-out;
+	z-index: 1;
+}
+#scrollToTop:hover {
+	opacity: 100%;
+}
+
+#flexyCard {
+	display: flex;
+	min-height: 480px;
+}
+
+#article {
+	flex: 1;
+}
+
+#aside {
+	flex: 0;
+	margin-left: 142px;
+	margin-right: 142px;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+mark {
+	display: contents;
+	color: var(--color-secondary);
+	background-color: transparent;
+}
+
+.italic,
+em {
+	display: contents;
+	font-style: italic;
+}
+
+/* card background, or content, whatever you want to call it */
+.cardBackground {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	gap: 10px;
+	flex-shrink: 0;
+	background: var(--color-base-100) 0% 0% no-repeat padding-box;
+	box-sizing: border-box;
+	border: 2px solid var(--color-base-300);
+	border-radius: 40px;
+	padding: 32px;
+	margin-bottom: 72px;
+	min-height: 727px;
+	box-shadow: 0 8px 32px 0 var(--wiki-shadow-strong-color);
+}
+
+/* add a layout wrapper to keep things sane with new comment section */
+#wikiArticle {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	gap: 10px;
+	flex-shrink: 0;
+}
+
+/* footnote, or the author */
+/* this is for markdown footnotes */
+.footnote {
+	display: inline;
+	color: var(--color-secondary);
+	border-radius: 10px;
+	padding-bottom: 0px;
+	padding-top: 0px;
+}
+
+sup {
+	vertical-align: top;
+	position: relative;
+	top: -0.5em;
+}
+
+.footnotes ol li p,
+.footnotes ul li p {
+	padding-bottom: 0;
+}
+.footnotes ol li,
+.footnotes ul li {
+	padding-left: 0;
+}
+.footnotes li::before {
+	display: none;
+}
+.footnotes ol {
+	counter-reset: item;
+}
+.footnotes ol li p::before {
+	font-size: 18px;
+	content: counter(item) '.';
+	counter-increment: item;
+}
+.footnotes li p {
+	font-style: italic;
+	position: relative;
+	font-size: 18px;
+	padding: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	border-bottom: 1px solid var(--color-neutral);
+}
+.footnotes li p::before {
+	content: '●';
+	font-size: 12px;
+	padding-right: 10px;
+	left: 0;
+}
+.footnotes li p:last-child {
+	margin-bottom: 0;
+	border-bottom: none;
+}
+
+/* pictures */
+.picture figure {
+	background: var(--color-accent) 0% 0% no-repeat padding-box;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	max-width: 315px;
+	border: 4px solid var(--color-base-300);
+	border-radius: 10px;
+	margin-bottom: 24px;
+	/* give room if last element */
+	margin-left: 0;
+}
+
+.picture img {
+	border: 4px solid var(--color-secondary);
+	border-radius: 10px;
+	margin-top: 24px;
+	margin-left: 40px;
+	margin-right: 40px;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+.picture figcaption {
+	text-align: center;
+	margin-top: 7px;
+	margin-bottom: 7px;
+}
+
+.flexRow {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+	column-gap: 24px;
+}
+
+/* markdown support for images */
+figure {
+	text-align: center;
+	border: 2px dashed var(--color-neutral);
+	border-radius: 10px;
+	padding: 6px;
+}
+figure figcaption {
+	font-weight: 500;
+	text-align: center;
+	background: var(--color-base-300);
+	border-radius: 6px;
+	margin-top: -3px;
+}
+figure img {
+	cursor: pointer;
+	border-radius: 6px;
+	width: 100%;
+	height: 100%;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+figure img:hover {
+	opacity: 0.7;
+}
+
+figure.centerImage {
+	float: none;
+	margin-left: 32px;
+	margin-right: 32px;
+}
+
+figure.floatImage {
+	float: right;
+	margin-left: 10px;
+	margin-bottom: 32px;
+	width: 30%;
+	height: 30%;
+}
+
+.stop-scrolling {
+	overflow: hidden;
+}

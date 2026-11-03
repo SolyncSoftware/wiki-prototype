@@ -1,0 +1,228 @@
+@import 'tailwindcss';
+
+@plugin 'daisyui' {
+	themes:
+		wiki-dark --default,
+		wiki-purple,
+		wiki-green;
+}
+
+@plugin 'daisyui/theme' {
+	name: 'wiki-dark';
+	default: true;
+	color-scheme: dark;
+
+	--color-primary: #f06c9b;
+	--color-secondary: #b775f0;
+	--color-accent: #661f57;
+	--color-neutral: #808080;
+	--color-base-100: #2a2228;
+	--color-base-200: #382e37;
+	--color-base-300: #453641;
+	--color-base-content: #ffffff;
+	--color-info: #6097b8;
+	--color-success: #51a775;
+	--color-warning: #f9c4d7;
+	--color-error: #ef4040;
+
+	--radius-selector: 1rem;
+	--radius-field: 1rem;
+	--radius-box: 2rem;
+	--size-selector: 0.25rem;
+	--size-field: 0.25rem;
+	--border: 0.5px;
+	--depth: 1;
+	--noise: 0;
+}
+
+@plugin 'daisyui/theme' {
+	name: 'wiki-purple';
+	color-scheme: dark;
+
+	--color-primary: #c9a0ff;
+	--color-primary-content: #1c1030;
+	--color-secondary: #f06c9b;
+	--color-accent: #5a2a9a;
+	--color-neutral: #9486ad;
+	--color-base-100: #231638;
+	--color-base-200: #301f4d;
+	--color-base-300: #3e2a63;
+	--color-base-content: #ffffff;
+	--color-info: #7aa7e0;
+	--color-success: #5fb58a;
+	--color-warning: #e6d2ff;
+	--color-error: #ef5a6f;
+
+	--radius-selector: 1rem;
+	--radius-field: 1rem;
+	--radius-box: 2rem;
+	--size-selector: 0.25rem;
+	--size-field: 0.25rem;
+	--border: 0.5px;
+	--depth: 1;
+	--noise: 0;
+}
+
+@plugin 'daisyui/theme' {
+	name: 'wiki-green';
+	color-scheme: dark;
+
+	--color-primary: #7fdc9e;
+	--color-primary-content: #0d2416;
+	--color-secondary: #f0d36c;
+	--color-accent: #1f6b45;
+	--color-neutral: #7f9488;
+	--color-base-100: #16281f;
+	--color-base-200: #1f362a;
+	--color-base-300: #2a4637;
+	--color-base-content: #ffffff;
+	--color-info: #6cb8d6;
+	--color-success: #51c27e;
+	--color-warning: #d2f5dc;
+	--color-error: #ef5a5a;
+
+	--radius-selector: 1rem;
+	--radius-field: 1rem;
+	--radius-box: 2rem;
+	--size-selector: 0.25rem;
+	--size-field: 0.25rem;
+	--border: 0.5px;
+	--depth: 1;
+	--noise: 0;
+}
+
+.site-card {
+	--card-fill: color-mix(
+		in srgb,
+		var(--color-base-200) calc(var(--card-opacity, 100) * 1%),
+		transparent
+	);
+	background: var(--card-fill);
+}
+
+:root[data-card-bg] .site-card {
+	--card-fill: color-mix(
+		in srgb,
+		var(--color-base-200) calc(var(--card-opacity, 100) * 0.4%),
+		transparent
+	);
+	background:
+		linear-gradient(var(--card-fill), var(--card-fill)),
+		var(--card-image) center / cover no-repeat;
+}
+
+:root[data-site-bg] body {
+	background:
+		linear-gradient(
+			color-mix(in srgb, var(--color-base-100) 35%, transparent),
+			color-mix(in srgb, var(--color-base-100) 35%, transparent)
+		),
+		var(--site-image) center / cover fixed no-repeat,
+		var(--color-base-100);
+}
+
+:root {
+	--font-default: 'Author', sans-serif;
+	--wiki-page-background:
+		linear-gradient(
+			180deg,
+			color-mix(in srgb, var(--color-primary) 10%, transparent) 0%,
+			color-mix(in srgb, var(--color-base-100) 10%, transparent) 100%
+		),
+		var(--color-base-100);
+	--wiki-header-background: linear-gradient(
+		180deg,
+		var(--color-base-100) 0%,
+		color-mix(in srgb, var(--color-base-100) 52%, transparent) 48.96%,
+		transparent 100%
+	);
+	--wiki-brand-gradient: linear-gradient(
+		180deg,
+		transparent 0%,
+		color-mix(in srgb, var(--color-primary) 8%, transparent) 51.04%,
+		color-mix(in srgb, var(--color-accent) 20%, transparent) 100%
+	);
+	--wiki-card-header-gradient:
+		linear-gradient(
+			180deg,
+			color-mix(in srgb, var(--color-accent) 30%, transparent) 0%,
+			color-mix(in srgb, var(--color-primary) 12%, transparent) 50.52%,
+			transparent 100%
+		),
+		var(--color-accent);
+	--wiki-border-color: color-mix(in srgb, var(--color-base-content) 20%, transparent);
+	--wiki-overlay: color-mix(in srgb, var(--color-neutral) 40%, transparent);
+	--wiki-shadow-color: rgb(0 0 0 / 0.25);
+	--wiki-shadow-strong-color: rgb(0 0 0 / 0.37);
+	--wiki-shadow-toast-color: rgb(0 0 0 / 0.12);
+}
+
+@layer base {
+	[data-theme] :where(a:not(.btn)) {
+		color: var(--color-primary);
+		text-decoration: none;
+	}
+
+	[data-theme] :where(a:not(.btn)):hover {
+		color: var(--color-warning);
+		text-decoration: none;
+	}
+}
+
+@layer components {
+	.btn-wiki {
+		--btn-color: var(--color-base-300);
+		--btn-fg: var(--color-base-content);
+		--size: 3.125rem;
+		--fontsize: 1.25rem;
+		font-size: 1.25rem;
+		font-weight: 600;
+		text-transform: none;
+		text-decoration: none;
+	}
+
+	.btn-wiki .author {
+		color: var(--color-neutral);
+		font-size: 1rem;
+		font-weight: 596;
+	}
+}
+
+/* Unlayered on purpose: base.css's unlayered `* { padding: 0 }` would otherwise zero DaisyUI button padding */
+.btn {
+	padding-inline: var(--btn-p);
+}
+
+.btn-wiki {
+	height: 3.125rem;
+}
+
+.btn-wiki-stack {
+	width: 100%;
+	height: auto;
+	flex-direction: column;
+	gap: 0.25rem;
+	padding-block: 0.625rem;
+	text-align: center;
+	overflow-wrap: anywhere;
+}
+
+/* Markdown articles can't carry DaisyUI classes, so `{: .buttonDefault }` paragraphs are styled here */
+p.buttonDefault > a {
+	@apply btn;
+	--btn-color: var(--color-base-300);
+	--btn-fg: var(--color-base-content);
+	--size: 3.125rem;
+	height: 3.125rem;
+	color: var(--btn-fg);
+	padding-inline: var(--btn-p);
+	font-size: 1.25rem;
+	font-weight: 600;
+	text-transform: none;
+	text-decoration: none;
+}
+
+p.buttonDefault > a:hover {
+	color: var(--btn-fg);
+	text-decoration: none;
+}

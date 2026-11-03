@@ -1,0 +1,33 @@
+<svelte:head>
+	<title>Let's Talk about Zamboli | Camellia Wiki</title>
+</svelte:head>
+
+<main>
+	<div id="notAFullTitleContainer">
+		<h1>Let's Talk about Zamboli</h1>
+	</div>
+	<div class="cardBackground">
+		<div class="card">
+			<div class="cardContents">
+				<h2>Who is Zamboli?</h2>
+				<p>
+					Zamboli is a house cat that lives with me. He is orange and very smart. He may as well be
+					the vice president one day, similar to the popular internet cat named Oscar. I will miss
+					him immensely.
+				</p>
+				<h2>Why is Zamboli special?</h2>
+				<p>
+					Zamboli has gone through a lot. At one point, he managed to beat Feline Infectious
+					Peritonitis (FIP). It's known as an "untreatable" virus that we managed to treat for a
+					long period of time. Well done Zam!
+				</p>
+			</div>
+			<div class="picture centerItem">
+				<figure>
+					<img src="/assets/images/zamboni.jpg" width="240" height="300" alt="zamboli the cat" />
+					<figcaption>Zamboli</figcaption>
+				</figure>
+			</div>
+		</div>
+	</div>
+</main>

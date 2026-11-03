@@ -1,0 +1,22 @@
+---
+layout: post
+title: 'Bloody Kiss'
+categories: posts
+author: KatGrrrl
+description: Bloody Kiss song page
+permalink: camellia/discography/:title
+---
+
+## Overview
+
+### Bloody Kiss
+
+_Bloody Kiss_ is a song by [かめりあ](</camellia>) (Camellia) first released on 2016-01-06.
+
+- Composition: かめりあ
+- Length: 03:38
+- Album Appearances: [THX30KFOLLOWERS](</camellia/discography/THX30KFOLLOWERS>)
+
+## External Links
+
+- [Bandcamp](https://cametek.bandcamp.com/track/bloody-kiss)

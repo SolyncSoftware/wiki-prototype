@@ -1,0 +1,32 @@
+---
+layout: post
+title: "gigadelic (Camellia's THE TERA Remix)"
+categories: posts
+author: KatGrrrl
+description: gigadelic (Camellia's THE TERA Remix) song page
+permalink: camellia/discography/:title
+---
+
+## Overview
+
+### gigadelic (Camellia's "THE TERA" Remix)
+
+_gigadelic (Camellia's "THE TERA" Remix)_ is a song by [teranoid](#) & [MC Natsack](#) remixed by [かめりあ](</camellia>) first released on 2015-07-01.
+
+- Composition: teranoid
+- Vocals: MC Natsack
+- Remix: かめりあ
+- Length: 02:03
+- BPM: 183
+- Album Appearances: [Camellia "Remixes" Summary & VIPs 02](</camellia/discography/Camellia-Remixes-Summary-VIPs-02>)
+- Game Appearances: [SOUND VOLTEX III GRAVITY WARS](https://remywiki.com/AC_SDVX_III)
+
+### gigadelic (Camellia's "THE TERA" Remix) ["10¹²" Long ver.]
+
+_gigadelic (Camellia's "THE TERA" Remix) \["10¹²" Long ver.\]_ is a song by [teranoid](#) & [MC Natsack](#) remixed by [かめりあ](</camellia>) first released on 2018-08-10.
+
+- Composition: teranoid
+- Vocals: MC Natsack
+- Remix: かめりあ
+- Length: 05:34
+- Album Appearances: [Camellia "Remixes" Summary & VIPs 02](</camellia/discography/Camellia-Remixes-Summary-VIPs-02>)

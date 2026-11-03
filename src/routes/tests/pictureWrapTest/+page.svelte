@@ -1,0 +1,36 @@
+<svelte:head>
+	<title>Image Gallery | Camellia Wiki</title>
+</svelte:head>
+
+<main>
+	<div id="notAFullTitleContainer">
+		<h1>Image Gallery</h1>
+	</div>
+	<div class="cardBackground">
+		<div class="card" id="flexyCard">
+			<div class="cardContents" id="article">
+				<h2>Look at These Cool Images</h2>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+					ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+					ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+				</p>
+				<h2>Look at These Cool Images</h2>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+					ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+					ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+				</p>
+			</div>
+			<div class="horiLine"></div>
+			<div id="aside">
+				<div class="picture">
+					<figure>
+						<img src="/assets/images/zamboni.jpg" width="240" height="300" alt="zamboli the cat" />
+						<figcaption>Zamboli</figcaption>
+					</figure>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>

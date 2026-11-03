@@ -1,0 +1,47 @@
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.cardContents {
+	a:where(:not(.btn)) {
+		color: var(--color-primary);
+		text-decoration: none;
+
+		&:hover {
+			color: var(--color-warning);
+			text-decoration: underline;
+		}
+	}
+
+	/* Jekyll wrapped figures in a <p> (32px padding); rehype-figure unwraps them */
+	figure {
+		display: block;
+		margin-bottom: 32px;
+	}
+
+	figure.centerImage {
+		margin-inline: 64px;
+	}
+
+	figure.floatImage {
+		margin-right: 32px;
+	}
+}
+
+/* Post layout card overrides (from OldJekyll post.html) */
+.layout-post .card {
+	max-width: 1136px;
+}
+@media screen and (min-width: 1136px) {
+	.layout-post .card {
+		min-width: 1136px;
+	}
+}
+@media screen and (min-width: 720px) and (max-width: 1136px) {
+	.layout-post .cardBackground,
+	.layout-post .card {
+		width: 100%;
+	}
+}

@@ -1,0 +1,20 @@
+---
+layout: post
+title: '音楽中毒で死んだ猫(cat killed by overdosing music)'
+categories: posts
+author: KatGrrrl
+description: 音楽中毒で死んだ猫(cat killed by overdosing music) song page
+permalink: camellia/discography/:title
+---
+
+## Overview
+
+### 音楽中毒で死んだ猫(cat killed by overdosing music)
+
+_音楽中毒で死んだ猫(cat killed by overdosing music)_ is a song by [かめりあ](</camellia>) (Camellia) first released on 2011-05-01.
+
+- Composition: かめりあ
+- Lyrics: かめりあ
+- Vocals: 初音ミク
+- Length: 04:09
+- Album Appearances: [TRIPPERS](</camellia/discography/TRIPPERS>)
