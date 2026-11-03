@@ -18,3 +18,5 @@ We've also added cool new things for you to try out, such as:
 - A blazingly faster user experience. Read more about it on the [about page](/about).
 
 We want to see what you can do with its customization. Have fun!
+
+This website will be up only for a limited time.
