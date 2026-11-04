@@ -1,0 +1,25 @@
+name: Deploy Production Environment
+
+on:
+  push:
+    branches:
+      - deploy
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build and Run Docker Container Locally
+        run: |
+          docker build -t solync-wiki:deploy .
+          docker stop solync-wiki-deploy || true
+          docker rm solync-wiki-deploy || true
+          docker run -d \
+            --name solync-wiki-deploy \
+            --restart unless-stopped \
+            -p 3003:5173 \
+            solync-wiki:deploy

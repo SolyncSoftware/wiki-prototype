@@ -1,0 +1,45 @@
+on: [push, pull_request]
+name: Continuous Integration
+concurrency:
+    group: ${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
+
+permissions:
+    contents: read
+    checks: write # required for test reporter
+
+jobs:
+    build-website:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Install Bun
+              uses: oven-sh/setup-bun@v1
+              with:
+                  bun-version: latest
+
+            - name: Install Dependencies
+              run: bun install --frozen-lockfile
+
+            - name: Check Svelte
+              run: bun run check
+
+            - name: Test prod build
+              run: bun run build
+
+            - name: Install Playwright browser
+              run: node node_modules/playwright/cli.js install --with-deps chromium
+
+            - name: Run browser tests
+              run: bun run test
+
+            - name: Test Docker image build
+              run: docker build -t solynclanding:pr-test .
+
+            # Incase self hosted
+            # - name: Cleanup Docker image
+            #   if always()
+            #   run: docker rmi solynclanding:pr-test || true
