@@ -47,4 +47,4 @@ We reserve the right to modify or replace these Terms of Service at any time. It
 
 ### 8. Contact Us
 
-If you have any questions, comments, and/or concerns about these Terms of Service, don't hesitate to get in touch with us at <legal@camellia.wiki> or by creating an [Admin Ticket](https://discord.com/channels/435720333786480641/1037187523677524038) in the [Camellia Discord](https://discord.gg/camellia).
+If you have any questions, comments, and/or concerns about these Terms of Service, don't hesitate to get in touch with us at <hello@solync.org>
