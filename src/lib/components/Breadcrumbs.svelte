@@ -19,13 +19,16 @@
 
 <div class="breadcrumbs ml-12! font-semibold [&_li]:gap-2 self-end">
 	<ul>
-		<li><a href={resolve('/')}>Homepage</a></li>
+		<li class="mr-1.5!"><a href={resolve('/')}>Homepage</a></li>
 		{#each segments as segment, index (segment)}
 			<li>
 				{#if index === segments.length - 1}
 					<span>{title || formatTitle(segment)}</span>
 				{:else}
-					<a href={resolve('/[...slug]', { slug: segments.slice(0, index + 1).join('/') })}>
+					<a
+						class="mr-1.5!"
+						href={resolve('/[...slug]', { slug: segments.slice(0, index + 1).join('/') })}
+					>
 						{formatTitle(segment)}
 					</a>
 				{/if}
