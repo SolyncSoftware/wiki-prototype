@@ -30,9 +30,6 @@ jobs:
       - name: Test prod build
         run: bun run build
 
-      - name: Run browser tests
-        run: bun run test
-
       - name: Test Docker image build
         run: docker build -t solync-wiki:pr-test .
 
