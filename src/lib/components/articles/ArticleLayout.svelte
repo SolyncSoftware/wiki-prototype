@@ -198,7 +198,7 @@
 			{#if layout === 'article'}
 				<div
 					id="contentWedge"
-					class="bg-base-200 w-70.75 rounded-box shrink-0 flex-col bg-[image:var(--wiki-brand-gradient)]"
+					class="bg-base-200 w-70.75 rounded-box shrink-0 flex-col bg-(image:--wiki-brand-gradient)"
 				>
 					<div
 						id="wedgeContainer"
@@ -209,12 +209,12 @@
 						<h2 class="mb-2">Contents</h2>
 						<hr class="ml-0 mr-0 bg-neutral mt-1 mb-2.5 h-0.5 border-0" />
 						<nav id="wedgeItems" class="font-500 text-lg block overflow-auto overflow-y-scroll">
-							<ol class="font-semibold gap-2.5 flex flex-col">
+							<ol class="font-semibold pl-4 list-decimal">
 								{#each sections as section (section.id)}
-									<li class:active={activeHeadingId === section.id} class="ml-[1.2em]">
+									<li class:active={activeHeadingId === section.id}>
 										<a href={`#${section.id}`}>{section.title}</a>
 										{#if section.subsections.length > 0}
-											<ul class="font-500 mt-2 gap-2 flex flex-col">
+											<ul class="font-medium! mt-2 pl-4 list-disc">
 												{#each section.subsections as subsection (subsection.id)}
 													<li class:active={activeHeadingId === subsection.id}>
 														<a href={`#${subsection.id}`}>{subsection.title}</a>
@@ -229,9 +229,9 @@
 					</div>
 				</div>
 			{/if}
-			<div class="card site-card mb-2.5 max-w-206.75 rounded-box leading-[26px]">
+			<div class="card site-card mb-2.5 max-w-206.75 rounded-box leading-6.5">
 				<div
-					class="cardContents px-12 pb-8 leading-[26px]"
+					class="cardContents px-12 pb-8 leading-6.5"
 					bind:this={contentElement}
 					use:styleArticleFigures
 					use:copyHeadingPermalinks
@@ -243,3 +243,33 @@
 		<Comments {slug} />
 	</div>
 </main>
+
+<style>
+	#contentWedge #wedgeContainer #wedgeItems > ol {
+		list-style-type: decimal;
+		padding-left: 1.25rem;
+	}
+
+	#contentWedge #wedgeContainer #wedgeItems > ol > li::marker {
+		color: var(--color-primary);
+		transition: color 0.2s ease-in-out;
+	}
+
+	#contentWedge #wedgeContainer #wedgeItems > ol > li:hover::marker {
+		color: var(--color-warning);
+	}
+
+	#contentWedge #wedgeContainer #wedgeItems > ol > li.active::marker {
+		color: var(--color-base-content);
+	}
+
+	#contentWedge #wedgeContainer #wedgeItems ul {
+		display: block;
+		list-style-type: disc;
+	}
+
+	#contentWedge #wedgeContainer #wedgeItems ul li {
+		display: list-item;
+		margin-bottom: 0.5rem;
+	}
+</style>
