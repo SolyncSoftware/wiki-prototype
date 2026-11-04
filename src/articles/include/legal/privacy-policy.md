@@ -48,7 +48,7 @@ We do not sell nor disclose your information to third parties. Doing this is bad
 
 We reserve the right to modify or replace this Privacy Policy at any time. It is your responsibility to review this policy periodically for changes. By continuing to access or use our services after any revisions become effective, you agree to be bound by the revised policy.
 
-> To view updates easier, view the [#🤖wiki-feed](https://discord.com/channels/435720333786480641/1174624963584610334) channel in the Discord!
+> To view updates easier, view the [#billboard-cool-announce](https://discord.com/channels/1278698834704338995/1291080636240756798) channel in the Discord!
 > {: .tip }
 
 ### 8. Contact Us

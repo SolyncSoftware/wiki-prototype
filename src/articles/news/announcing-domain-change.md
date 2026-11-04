@@ -16,3 +16,7 @@ We have finally got a cool 😎 and fancy domain on [camellia.wiki](https://came
 We also have a [Beta View](https://beta.camellia.wiki) of the site! This is if you want to see new and upcoming changes!
 
 That's about it for now; we hope to do more cool things in the future! :)
+
+## Note: 11/3/26
+
+This article is outdated!
