@@ -38,7 +38,7 @@ Yeah, this is still the same codebase.
 
 ### Who runs this?
 
-Pretty much the programmers of Solync and our occasional contributors, including me. You can view all active contributors [here](https://github.com/solyncsoftware/Wiki/graphs/contributors).
+Pretty much the programmers of Solync and our occasional contributors, including me. You can view all active contributors [here](https://github.com/solyncsoftware/wiki-prototype/graphs/contributors).
 
 I, papertek, am the lead of this project. Am I good at it? Not sure! But things have been smooth so far... Our group of contributors has done a great job keeping this project in a good state.
 
@@ -48,4 +48,4 @@ Yeah, the Wiki is still relatively new, and there are some bugs and limitations.
 
 To put it simply and bluntly, coolness, good UX, and experimenting with the future. Doing this is fun and has been a learning experience for me personally, and I'm all up for it. If you would like to contribute some articles or code, we are not stopping you :).
 
-[Visit the GitHub!](https://github.com/solyncsoftware/Wiki)
+[Visit the GitHub!](https://github.com/solyncsoftware/wiki-prototype)

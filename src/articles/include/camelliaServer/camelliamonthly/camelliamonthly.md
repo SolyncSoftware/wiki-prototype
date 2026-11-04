@@ -80,7 +80,7 @@ Happy New Year everyone! Camellia has managed to up the BPM once more and kick 2
 
 **New Staff:** Let's welcome in our newly-promoted Temp-Admin <mark>@thecodingguy</mark> and Helper <mark>@hypertone</mark>
 
-**Current State of the Camellia Wiki:** The Camellia Wiki has seen some new updates and bug fixes! We've been hard at work with our newest feature, "Comments!" You can seek a preview on our [Beta View](https://wiki.solync.org) of the wiki! This will eventually be merged into the [main live branch](https://github.com/solyncsoftware/Wiki/live). See something missing? Read our [contributing article](https://wiki.solync.org/contributing) to get started!
+**Current State of the Camellia Wiki:** The Camellia Wiki has seen some new updates and bug fixes! We've been hard at work with our newest feature, "Comments!" You can seek a preview on our [Beta View](https://camellia.wiki) of the wiki! This will eventually be merged into the [main live branch](https://github.com/solyncsoftware/wiki-prototype/live). See something missing? Read our [contributing article](https://camellia.wiki/contributing) to get started!
 
 **Archival of News and Releases JP:** We've decided to merge the EN and JP news as a means of consolidating all the information into a single channel. Now, it looks more concise!
 

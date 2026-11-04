@@ -181,7 +181,7 @@ If you want to test locally, please follow these steps:
 
 1. Install [Git](https://www.git-scm.com/downloads) and [Jekyll](https://jekyllrb.com/docs/installation/) (if you are contributing to styling, install [Sass](https://sass-lang.com/install/))
 2. Open your terminal of choice
-3. Clone the repo with `git clone https://github.com/solyncsoftware/Wiki`
+3. Clone the repo with `git clone https://github.com/solyncsoftware/wiki-prototype`
 4. Go inside the newly created folder with the clone
 5. Run `bundle install` to install the gems required
 6. Run `bundle exec jekyll serve` to run the local server

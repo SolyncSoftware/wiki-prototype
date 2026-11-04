@@ -24,9 +24,9 @@
 		</p>
 		<p>
 			Created by{' '}
-			<a href="https://github.com/solyncsoftware/Wiki" target="_blank">pptek</a>{' '}
+			<a href="https://github.com/solyncsoftware/wiki-prototype" target="_blank">pptek</a>{' '}
 			with the contribution of{' '}
-			<a href="https://github.com/solyncsoftware/Wiki/graphs/contributors" target="_blank">others</a
+			<a href="https://github.com/solyncsoftware/wiki-prototype/graphs/contributors" target="_blank">others</a
 			>.
 		</p>
 	</div>

@@ -140,7 +140,7 @@
 		<div id="twoBotans" class="flex">
 			<a
 				id="githubBtn"
-				href="https://github.com/solyncsoftware/Wiki"
+				href="https://github.com/solyncsoftware/wiki-prototype"
 				target="_blank"
 				class="text-base-content hover-underline-none hover:bg-base-300 p-1 flex-shrink-0 rounded-[25px] border-none bg-none"
 			>
