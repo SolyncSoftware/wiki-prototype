@@ -21,5 +21,5 @@ jobs:
           docker run -d \
             --name solync-wiki-deploy \
             --restart unless-stopped \
-            -p 3003:5173 \
+            -p 3003:3000 \
             solync-wiki:deploy
