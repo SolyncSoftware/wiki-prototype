@@ -1,8 +1,9 @@
-import adapter from 'svelte-adapter-bun';
+import adapter from '@sveltejs/adapter-bun';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { mdsvex } from 'mdsvex';
+import remarkFootnotes from 'remark-footnotes';
 
 const dirname = path.dirname(fileURLToPath(import.meta.url));
 const articleLayout = path.join(dirname, 'src/lib/components/articles/ArticleLayout.svelte');
@@ -155,6 +156,38 @@ function rehypeArticleFigures() {
 	};
 }
 
+// base.css styles kramdown's footnote markup: `a.footnote` references and `<li><p>` definitions
+function rehypeArticleFootnotes() {
+	const hasClass = (node, name) => {
+		const className = node.properties?.className;
+		return Array.isArray(className) ? className.includes(name) : className === name;
+	};
+
+	return (tree) => {
+		const visit = (node) => {
+			if (!node.children) return;
+
+			if (node.type === 'element' && node.tagName === 'a' && hasClass(node, 'footnote-ref')) {
+				node.properties.className = ['footnote'];
+			}
+
+			if (
+				node.type === 'element' &&
+				node.tagName === 'li' &&
+				node.properties?.id?.startsWith('fn-')
+			) {
+				node.children = [
+					{ type: 'element', tagName: 'p', properties: {}, children: node.children }
+				];
+			}
+
+			node.children.forEach(visit);
+		};
+
+		visit(tree);
+	};
+}
+
 function getHeadingText(node) {
 	if (node.type === 'text') return node.value;
 	return node.children?.map(getHeadingText).join('') ?? '';
@@ -242,8 +275,8 @@ export default {
 		vitePreprocess(),
 		mdsvex({
 			extensions: ['.md'],
-			remarkPlugins: [remarkKramdownAttributes],
-			rehypePlugins: [rehypeArticleFigures, rehypeArticleHeadings],
+			remarkPlugins: [[remarkFootnotes, { inlineNotes: true }], remarkKramdownAttributes],
+			rehypePlugins: [rehypeArticleFigures, rehypeArticleFootnotes, rehypeArticleHeadings],
 			layout: {
 				article: articleLayout,
 				post: articleLayout,

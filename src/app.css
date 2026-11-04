@@ -222,7 +222,8 @@ p.buttonDefault > a {
 	text-decoration: none;
 }
 
-p.buttonDefault > a:hover {
-	color: var(--btn-fg);
-	text-decoration: none;
+sub,
+sup {
+	vertical-align: baseline;
+	line-height: 1.5;
 }
