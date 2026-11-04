@@ -1,5 +1,5 @@
 import type { RequestHandler } from './$types';
-import { addComment, getComments } from '$lib/data/comments';
+import { addComment, getComments } from '#lib/data/comments.ts';
 
 export const GET: RequestHandler = async ({ params }) => {
 	const slug = params.slug as string;

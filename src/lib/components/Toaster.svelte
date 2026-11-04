@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { dismissToast, toasts, type ToastStyle } from '$lib/toast.svelte';
+	import { dismissToast, toasts, type ToastStyle } from '#lib/toast.svelte.ts';
 
 	const colors: Record<ToastStyle, string> = {
 		success: 'var(--color-success)',

@@ -25,7 +25,7 @@
 				{#if index === segments.length - 1}
 					<span>{title || formatTitle(segment)}</span>
 				{:else}
-					<a href={resolve(('/' + segments.slice(0, index + 1).join('/')) as `/${string}`)}>
+					<a href={resolve('/[...slug]', { slug: segments.slice(0, index + 1).join('/') })}>
 						{formatTitle(segment)}
 					</a>
 				{/if}

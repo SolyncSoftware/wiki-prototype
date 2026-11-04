@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import { onMount } from 'svelte';
-	import Sidebar from '$lib/components/Sidebar.svelte';
+	import Sidebar from '#lib/components/Sidebar.svelte';
 
 	let sidebarOpen = $state(false);
 	let headerSticky = $state(false);

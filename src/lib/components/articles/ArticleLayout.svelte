@@ -1,15 +1,15 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
-	import { page } from '$app/stores';
-	import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
-	import TitleContainer from '$lib/components/TitleContainer.svelte';
-	import { pushToast } from '$lib/toast.svelte';
+	import { page } from '$app/state';
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
+	import TitleContainer from '#lib/components/TitleContainer.svelte';
+	import { pushToast } from '#lib/toast.svelte.ts';
 
 	const newArticleLink = {
 		href: 'https://github.com/solyncsoftware/wiki-articles',
 		label: 'New Article Directory'
 	};
-	import Comments from '$lib/components/Comments.svelte';
+	import Comments from '#lib/components/Comments.svelte';
 
 	interface ArticleSection {
 		id: string;
@@ -31,7 +31,7 @@
 		children: Snippet;
 	} = $props();
 
-	let slug = $derived($page.params.slug as string);
+	let slug = $derived(page.params.slug as string);
 
 	let contentElement = $state<HTMLDivElement>();
 	let wedgeContainer = $state<HTMLDivElement>();
@@ -189,7 +189,7 @@
 			>{/if}.
 	{/snippet}
 	{#snippet breadcrumbs()}
-		<Breadcrumbs {title} href={$page.url.pathname} />
+		<Breadcrumbs {title} href={page.url.pathname} />
 	{/snippet}
 	<div
 		class="cardBackground bg-base-100 border-base-300 mb-18 min-h-181.75 max-w-305 gap-2.5 p-8 rounded-box flex flex-col border-2 shadow-[0_8px_32px_0_var(--wiki-shadow-strong-color)]"

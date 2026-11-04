@@ -1,13 +1,13 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import { onMount } from 'svelte';
-	import ThemeCustomizer from '$lib/components/ThemeCustomizer.svelte';
+	import ThemeCustomizer from '#lib/components/ThemeCustomizer.svelte';
 	import {
 		loadThemeDefaults,
 		resetCustomization,
 		restoreCustomization,
 		restoreImages
-	} from '$lib/theme.svelte';
+	} from '#lib/theme.svelte.ts';
 
 	interface Props {
 		open?: boolean;
@@ -26,6 +26,12 @@
 	];
 
 	let activeTheme = $state('wiki-dark');
+
+	function linkHref(href: string) {
+		if (href === '/') return resolve('/');
+		if (href === '/tests') return resolve('/tests');
+		return resolve('/[...slug]', { slug: href.slice(1) });
+	}
 
 	const siteLinks = [
 		{ href: '/', title: 'Main Page', subtitle: 'Also known as the Homepage' },
@@ -166,7 +172,7 @@
 				<h3 class="mt-4!">Site Navigation</h3>
 				<ol>
 					{#each siteLinks as link (link.href)}
-						<a href={resolve(link.href)} class="btn btn-wiki btn-wiki-stack">
+						<a href={linkHref(link.href)} class="btn btn-wiki btn-wiki-stack">
 							{link.title}
 							<div class="author">{link.subtitle}</div>
 						</a>
@@ -175,7 +181,7 @@
 				<h3>Other Pages</h3>
 				<ol>
 					{#each otherLinks as link (link.href)}
-						<a href={resolve(link.href)} class="btn btn-wiki btn-wiki-stack">
+						<a href={linkHref(link.href)} class="btn btn-wiki btn-wiki-stack">
 							{link.title}
 							<div class="author">{link.subtitle}</div>
 						</a>

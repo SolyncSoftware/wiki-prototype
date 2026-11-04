@@ -1,5 +1,5 @@
-import { getPublishedArticles } from '$lib/data/articles';
-import type { ArticleEntry } from '$lib/utils/types';
+import { getPublishedArticles } from '#lib/data/articles.ts';
+import type { ArticleEntry } from '#lib/utils/types.ts';
 import type { PageServerLoad } from './$types';
 
 const SIDEBAR_LIMIT = 4;

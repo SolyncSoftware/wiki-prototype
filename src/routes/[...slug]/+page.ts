@@ -1,6 +1,6 @@
 import { error } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
-import { getArticleBySlug } from '$lib/data/articles';
+import { getArticleBySlug } from '#lib/data/articles.ts';
 
 export const load: PageLoad = ({ params }) => {
 	const article = getArticleBySlug(params.slug);

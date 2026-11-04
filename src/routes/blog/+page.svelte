@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
-	import TitleContainer from '$lib/components/TitleContainer.svelte';
+	import TitleContainer from '#lib/components/TitleContainer.svelte';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();

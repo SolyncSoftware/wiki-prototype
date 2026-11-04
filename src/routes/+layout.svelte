@@ -1,11 +1,11 @@
 <script lang="ts">
 	import '../app.css';
 	import './layout.css';
-	import ScrollToTop from '$lib/components/ScrollToTop.svelte';
-	import Header from '$lib/components/Header.svelte';
-	import Modal from '$lib/components/Modal.svelte';
-	import Toaster from '$lib/components/Toaster.svelte';
-	import Footer from '$lib/components/Footer.svelte';
+	import ScrollToTop from '#lib/components/ScrollToTop.svelte';
+	import Header from '#lib/components/Header.svelte';
+	import Modal from '#lib/components/Modal.svelte';
+	import Toaster from '#lib/components/Toaster.svelte';
+	import Footer from '#lib/components/Footer.svelte';
 	import type { LayoutProps } from './$types';
 
 	let { children }: LayoutProps = $props();

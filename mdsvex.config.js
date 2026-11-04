@@ -1,5 +1,3 @@
-import adapter from '@sveltejs/adapter-bun';
-import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { mdsvex } from 'mdsvex';
@@ -269,22 +267,13 @@ function rehypeArticleHeadings() {
 	};
 }
 
-export default {
-	extensions: ['.svelte', '.md'],
-	preprocess: [
-		vitePreprocess(),
-		mdsvex({
-			extensions: ['.md'],
-			remarkPlugins: [[remarkFootnotes, { inlineNotes: true }], remarkKramdownAttributes],
-			rehypePlugins: [rehypeArticleFigures, rehypeArticleFootnotes, rehypeArticleHeadings],
-			layout: {
-				article: articleLayout,
-				post: articleLayout,
-				_: articleLayout
-			}
-		})
-	],
-	kit: {
-		adapter: adapter()
+export const mdsvexPreprocessor = mdsvex({
+	extensions: ['.md'],
+	remarkPlugins: [[remarkFootnotes, { inlineNotes: true }], remarkKramdownAttributes],
+	rehypePlugins: [rehypeArticleFigures, rehypeArticleFootnotes, rehypeArticleHeadings],
+	layout: {
+		article: articleLayout,
+		post: articleLayout,
+		_: articleLayout
 	}
-};
+});

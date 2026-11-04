@@ -1,5 +1,5 @@
 import { json } from '@sveltejs/kit';
-import { getPublishedArticles } from '$lib/data/articles';
+import { getPublishedArticles } from '#lib/data/articles.ts';
 import type { RequestHandler } from './$types';
 
 export const prerender = true;

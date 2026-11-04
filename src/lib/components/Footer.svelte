@@ -19,8 +19,8 @@
 	</a>
 	<div class="text-xl flex flex-col items-center justify-center text-center">
 		<p>
-			<a href={resolve('/terms-of-service')}>Terms of Service</a> •{' '}
-			<a href={resolve('/privacy-policy')}>Privacy Policy</a>
+			<a href={resolve('/[...slug]', { slug: 'terms-of-service' })}>Terms of Service</a> •{' '}
+			<a href={resolve('/[...slug]', { slug: 'privacy-policy' })}>Privacy Policy</a>
 		</p>
 		<p>
 			Created by{' '}
