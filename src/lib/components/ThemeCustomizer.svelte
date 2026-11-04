@@ -46,6 +46,26 @@
 		{ key: 'cardOpacity', label: 'Card opacity', min: 20, max: 100, step: 5, unit: '%' }
 	] as const;
 
+	type Slider = (typeof sliders)[number];
+
+	function onValueTyped(event: Event, slider: Slider) {
+		const value = (event.currentTarget as HTMLInputElement).valueAsNumber;
+		if (!Number.isFinite(value)) return;
+		customization[slider.key] = value;
+		applyCustomization();
+	}
+
+	// Clamping only on commit so partial entries like "0." aren't rewritten mid-typing
+	function onValueCommitted(event: Event, slider: Slider) {
+		const input = event.currentTarget as HTMLInputElement;
+		const value = Number.isFinite(input.valueAsNumber)
+			? input.valueAsNumber
+			: customization[slider.key];
+		customization[slider.key] = Math.min(slider.max, Math.max(slider.min, value));
+		input.value = String(customization[slider.key]);
+		applyCustomization();
+	}
+
 	const toggles = [
 		{ key: 'depth', label: 'Depth shadows' },
 		{ key: 'noise', label: 'Noise texture' }
@@ -108,9 +128,22 @@
 
 		{#each sliders as slider (slider.key)}
 			<label class="gap-1 text-sm font-semibold flex flex-col">
-				<span class="flex justify-between">
+				<span class="flex items-center justify-between">
 					{slider.label}
-					<span class="text-neutral">{customization[slider.key]}{slider.unit}</span>
+					<span class="gap-1 text-neutral flex items-center">
+						<input
+							type="number"
+							class="value-input"
+							aria-label="{slider.label} value"
+							min={slider.min}
+							max={slider.max}
+							step={slider.step}
+							value={customization[slider.key]}
+							oninput={(e) => onValueTyped(e, slider)}
+							onchange={(e) => onValueCommitted(e, slider)}
+						/>
+						{slider.unit}
+					</span>
 				</span>
 				<input
 					type="range"
@@ -185,6 +218,16 @@
 		& .collapse-content {
 			padding: 0 1rem 1rem;
 		}
+	}
+
+	.value-input {
+		width: 4.5rem;
+		padding: 0.125rem 0.375rem;
+		border: 1px solid var(--color-primary);
+		border-radius: var(--radius-field);
+		background: transparent;
+		color: var(--color-base-content);
+		text-align: right;
 	}
 
 	.color-swatch {
