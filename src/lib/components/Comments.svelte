@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { pushToast } from '#lib/toast.svelte.ts';
+	import { pushToast } from '#lib/toast.svelte.js';
 
 	interface Comment {
 		id: string;

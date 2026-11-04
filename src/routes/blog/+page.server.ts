@@ -1,5 +1,5 @@
-import { getPublishedArticles } from '#lib/data/articles.ts';
-import type { ArticleEntry } from '#lib/utils/types.ts';
+import { getPublishedArticles } from '#lib/data/articles.js';
+import type { ArticleEntry } from '#lib/utils/types.js';
 import type { PageServerLoad } from './$types';
 
 function toSummary(article: ArticleEntry) {

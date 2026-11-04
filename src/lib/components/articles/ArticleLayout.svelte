@@ -3,10 +3,10 @@
 	import { page } from '$app/state';
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import TitleContainer from '#lib/components/TitleContainer.svelte';
-	import { pushToast } from '#lib/toast.svelte.ts';
+	import { pushToast } from '#lib/toast.svelte.js';
 
 	const newArticleLink = {
-		href: 'https://github.com/solyncsoftware/wiki-articles',
+		href: 'https://github.com/solyncsoftware/wiki-prototype',
 		label: 'New Article Directory'
 	};
 	import Comments from '#lib/components/Comments.svelte';

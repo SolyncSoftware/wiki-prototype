@@ -8,7 +8,7 @@
 		setImage,
 		// sidebarImage,
 		siteImage
-	} from '#lib/theme.svelte.ts';
+	} from '#lib/theme.svelte.js';
 
 	const imageFields = [
 		{ slot: 'site', label: 'Website background', state: siteImage },

@@ -7,7 +7,7 @@
 		resetCustomization,
 		restoreCustomization,
 		restoreImages
-	} from '#lib/theme.svelte.ts';
+	} from '#lib/theme.svelte.js';
 
 	interface Props {
 		open?: boolean;

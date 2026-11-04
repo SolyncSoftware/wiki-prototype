@@ -10,7 +10,7 @@ This is the About page for the Camellia Wiki, where we will tell you about stuff
 
 This Wiki is designed with modularity in mind, as with every other Wiki out there. I tried to keep things simple so the average user could contribute and write documents themselves and know where things go. Most information about contributing and our guidelines can be found in the [Contributing](/contributing) article.
 
-**11/3/2026 Fun fact:** This is a SvelteKit rewrite that was built by a clanker. An AI coding assistant ported the original Jekyll site to SvelteKit, Svelte 5, Tailwind and DaisyUI. While I pointed out everything it broke along the way, like pink buttons, missing margins, and a header that didn't work, and massively incorrect styles, the old Jekyll site was the source of style and behavior. The clanker had to be reminded of that a lot. It was also a fun experiment to see how far I can push a badly written codebase into a framework. I'm kinda proud of the stupid clanker!
+**11/3/2026 Fun fact:** This is a SvelteKit project that was done by a clanker and reviewed by a human. As a prototype, the clanker ported the original Jekyll site to SvelteKit, Svelte 5, Tailwind, and DaisyUI. While I pointed out everything it broke along the way, like pink buttons, missing margins, and a header that didn't work, and massively incorrect styles, the old Jekyll site was referenced at all times and the clanker had to be reminded of it. We decided to do this because we introduced new features to the site like the theme system. It's powered by DaisyUI and we're interested to see what our users will do with this system. It was also a fun experiment to see how far our prototyping can go!
 
 ### The Goal
 

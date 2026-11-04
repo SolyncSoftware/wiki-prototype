@@ -1,4 +1,4 @@
-import type { ArticleEntry, ArticleMetadata, MdsvexModule } from '#lib/utils/types.ts';
+import type { ArticleEntry, ArticleMetadata, MdsvexModule } from '#lib/utils/types.js';
 
 const articleModules = import.meta.glob<MdsvexModule>('/src/articles/**/*.md', { eager: true });
 
