@@ -10,6 +10,16 @@ export interface ThemeCustomization {
 	border: number;
 	size: number;
 	cardOpacity: number;
+	siteImageOpacity: number;
+	cardImageOpacity: number;
+	gradient: boolean;
+	gradientFrom: string;
+	gradientTo: string;
+	gradientAngle: number;
+	cardGradient: boolean;
+	cardGradientFrom: string;
+	cardGradientTo: string;
+	cardGradientAngle: number;
 	depth: boolean;
 	noise: boolean;
 }
@@ -24,6 +34,16 @@ export const customization = $state<ThemeCustomization>({
 	border: 0.5,
 	size: 0.25,
 	cardOpacity: 100,
+	siteImageOpacity: 65,
+	cardImageOpacity: 100,
+	gradient: false,
+	gradientFrom: '#000000',
+	gradientTo: '#000000',
+	gradientAngle: 180,
+	cardGradient: false,
+	cardGradientFrom: '#000000',
+	cardGradientTo: '#000000',
+	cardGradientAngle: 180,
 	depth: true,
 	noise: false
 });
@@ -49,6 +69,10 @@ const inlineProps = [
 	'--size-field',
 	'--size-selector',
 	'--card-opacity',
+	'--site-image-opacity',
+	'--card-image-opacity',
+	'--site-gradient',
+	'--card-gradient',
 	'--depth',
 	'--noise'
 ];
@@ -70,6 +94,8 @@ function readVar(name: string) {
 
 export function clearInlineTheme() {
 	for (const prop of inlineProps) root().style.removeProperty(prop);
+	root().removeAttribute('data-site-gradient');
+	root().removeAttribute('data-card-gradient');
 }
 
 export function loadThemeDefaults() {
@@ -81,6 +107,16 @@ export function loadThemeDefaults() {
 	customization.border = parseFloat(readVar('--border')) || 0.5;
 	customization.size = parseFloat(readVar('--size-field')) || 0.25;
 	customization.cardOpacity = 100;
+	customization.siteImageOpacity = 65;
+	customization.cardImageOpacity = 100;
+	customization.gradient = false;
+	customization.gradientFrom = customization.primary;
+	customization.gradientTo = toHex(readVar('--color-accent'));
+	customization.gradientAngle = 180;
+	customization.cardGradient = false;
+	customization.cardGradientFrom = customization.primary;
+	customization.cardGradientTo = toHex(readVar('--color-accent'));
+	customization.cardGradientAngle = 180;
 	customization.depth = readVar('--depth') !== '0';
 	customization.noise = readVar('--noise') === '1';
 }
@@ -100,6 +136,18 @@ export function applyCustomization() {
 	style.setProperty('--size-field', `${customization.size}rem`);
 	style.setProperty('--size-selector', `${customization.size}rem`);
 	style.setProperty('--card-opacity', String(customization.cardOpacity));
+	style.setProperty('--site-image-opacity', String(customization.siteImageOpacity / 100));
+	style.setProperty('--card-image-opacity', String(customization.cardImageOpacity / 100));
+	style.setProperty(
+		'--site-gradient',
+		`linear-gradient(${customization.gradientAngle}deg, ${customization.gradientFrom}, ${customization.gradientTo})`
+	);
+	root().toggleAttribute('data-site-gradient', customization.gradient);
+	style.setProperty(
+		'--card-gradient',
+		`linear-gradient(${customization.cardGradientAngle}deg, color-mix(in srgb, ${customization.cardGradientFrom} ${customization.cardOpacity}%, transparent), color-mix(in srgb, ${customization.cardGradientTo} ${customization.cardOpacity}%, transparent))`
+	);
+	root().toggleAttribute('data-card-gradient', customization.cardGradient);
 	style.setProperty('--depth', customization.depth ? '1' : '0');
 	style.setProperty('--noise', customization.noise ? '1' : '0');
 	localStorage.setItem(STORAGE_KEY, JSON.stringify($state.snapshot(customization)));

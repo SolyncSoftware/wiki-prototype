@@ -38,15 +38,70 @@
 		{ key: 'base', label: 'Background' }
 	] as const;
 
-	const sliders = [
+	interface Slider {
+		key:
+			| 'boxRadius'
+			| 'fieldRadius'
+			| 'border'
+			| 'size'
+			| 'cardOpacity'
+			| 'siteImageOpacity'
+			| 'cardImageOpacity'
+			| 'gradientAngle'
+			| 'cardGradientAngle';
+		label: string;
+		min: number;
+		max: number;
+		step: number;
+		unit: string;
+		when?: () => boolean;
+	}
+
+	const sliders: Slider[] = [
 		{ key: 'boxRadius', label: 'Card radius', min: 0, max: 2.5, step: 0.125, unit: 'rem' },
 		{ key: 'fieldRadius', label: 'Control radius', min: 0, max: 2, step: 0.125, unit: 'rem' },
 		{ key: 'border', label: 'Border width', min: 0, max: 3, step: 0.5, unit: 'px' },
 		{ key: 'size', label: 'Control size', min: 0.2, max: 0.35, step: 0.025, unit: 'rem' },
-		{ key: 'cardOpacity', label: 'Card opacity', min: 20, max: 100, step: 5, unit: '%' }
-	] as const;
+		{ key: 'cardOpacity', label: 'Card opacity', min: 20, max: 100, step: 5, unit: '%' },
+		{
+			key: 'siteImageOpacity',
+			label: 'Website image opacity',
+			min: 0,
+			max: 100,
+			step: 5,
+			unit: '%',
+			when: () => siteImage.active
+		},
+		{
+			key: 'cardImageOpacity',
+			label: 'Card image opacity',
+			min: 0,
+			max: 100,
+			step: 5,
+			unit: '%',
+			when: () => cardImage.active
+		},
+		{
+			key: 'gradientAngle',
+			label: 'Gradient angle',
+			min: 0,
+			max: 360,
+			step: 5,
+			unit: '°',
+			when: () => customization.gradient
+		},
+		{
+			key: 'cardGradientAngle',
+			label: 'Card gradient angle',
+			min: 0,
+			max: 360,
+			step: 5,
+			unit: '°',
+			when: () => customization.cardGradient
+		}
+	];
 
-	type Slider = (typeof sliders)[number];
+	const visibleSliders = $derived(sliders.filter((s) => !s.when || s.when()));
 
 	function onValueTyped(event: Event, slider: Slider) {
 		const value = (event.currentTarget as HTMLInputElement).valueAsNumber;
@@ -98,7 +153,7 @@
 		customization.secondary = hslHex(hue + s, 55, 0.6);
 		customization.accent = hslHex(hue + a, 70, 0.6);
 		customization.base = hslHex(hue, 25, 0.15);
-		for (const s of sliders) {
+		for (const s of sliders.filter((s) => !s.when)) {
 			const steps = Math.round((s.max - s.min) / s.step);
 			const value = s.min + Math.floor(Math.random() * (steps + 1)) * s.step;
 			customization[s.key] = Number(value.toFixed(3));
@@ -126,7 +181,7 @@
 			{/each}
 		</div>
 
-		{#each sliders as slider (slider.key)}
+		{#each visibleSliders as slider (slider.key)}
 			<label class="gap-1 text-sm font-semibold flex flex-col">
 				<span class="flex items-center justify-between">
 					{slider.label}
@@ -168,6 +223,70 @@
 				/>
 			</label>
 		{/each}
+
+		<label class="text-sm font-semibold flex items-center justify-between">
+			Background gradient
+			<input
+				type="checkbox"
+				class="toggle toggle-primary toggle-sm"
+				bind:checked={customization.gradient}
+				onchange={applyCustomization}
+			/>
+		</label>
+		{#if customization.gradient}
+			<div class="gap-2 grid grid-cols-2">
+				<label class="gap-2 text-sm font-semibold flex items-center justify-between">
+					From
+					<input
+						type="color"
+						class="color-swatch"
+						bind:value={customization.gradientFrom}
+						oninput={applyCustomization}
+					/>
+				</label>
+				<label class="gap-2 text-sm font-semibold flex items-center justify-between">
+					To
+					<input
+						type="color"
+						class="color-swatch"
+						bind:value={customization.gradientTo}
+						oninput={applyCustomization}
+					/>
+				</label>
+			</div>
+		{/if}
+
+		<label class="text-sm font-semibold flex items-center justify-between">
+			Card gradient
+			<input
+				type="checkbox"
+				class="toggle toggle-primary toggle-sm"
+				bind:checked={customization.cardGradient}
+				onchange={applyCustomization}
+			/>
+		</label>
+		{#if customization.cardGradient}
+			<div class="gap-2 grid grid-cols-2">
+				<label class="gap-2 text-sm font-semibold flex items-center justify-between">
+					From
+					<input
+						type="color"
+						class="color-swatch"
+						bind:value={customization.cardGradientFrom}
+						oninput={applyCustomization}
+					/>
+				</label>
+				<label class="gap-2 text-sm font-semibold flex items-center justify-between">
+					To
+					<input
+						type="color"
+						class="color-swatch"
+						bind:value={customization.cardGradientTo}
+						oninput={applyCustomization}
+					/>
+				</label>
+			</div>
+		{/if}
 
 		{#each imageFields as field (field.slot)}
 			<div class="gap-1 text-sm font-semibold flex flex-col">
