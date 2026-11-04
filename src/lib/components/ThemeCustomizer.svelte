@@ -48,6 +48,8 @@
 			| 'siteImageOpacity'
 			| 'cardImageOpacity'
 			| 'gradientAngle'
+			| 'gradientOpacity'
+			| 'cardGradientOpacity'
 			| 'cardGradientAngle';
 		label: string;
 		min: number;
@@ -89,6 +91,24 @@
 			step: 5,
 			unit: '°',
 			when: () => customization.gradient
+		},
+		{
+			key: 'gradientOpacity',
+			label: 'Gradient opacity',
+			min: 0,
+			max: 100,
+			step: 5,
+			unit: '%',
+			when: () => customization.gradient
+		},
+		{
+			key: 'cardGradientOpacity',
+			label: 'Card gradient opacity',
+			min: 0,
+			max: 100,
+			step: 5,
+			unit: '%',
+			when: () => customization.cardGradient
 		},
 		{
 			key: 'cardGradientAngle',

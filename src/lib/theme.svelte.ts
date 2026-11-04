@@ -16,6 +16,8 @@ export interface ThemeCustomization {
 	gradientFrom: string;
 	gradientTo: string;
 	gradientAngle: number;
+	gradientOpacity: number;
+	cardGradientOpacity: number;
 	cardGradient: boolean;
 	cardGradientFrom: string;
 	cardGradientTo: string;
@@ -33,13 +35,15 @@ export const customization = $state<ThemeCustomization>({
 	fieldRadius: 1,
 	border: 0.5,
 	size: 0.25,
-	cardOpacity: 100,
+	cardOpacity: 80,
 	siteImageOpacity: 65,
 	cardImageOpacity: 100,
 	gradient: false,
 	gradientFrom: '#000000',
 	gradientTo: '#000000',
 	gradientAngle: 180,
+	gradientOpacity: 100,
+	cardGradientOpacity: 100,
 	cardGradient: false,
 	cardGradientFrom: '#000000',
 	cardGradientTo: '#000000',
@@ -106,13 +110,15 @@ export function loadThemeDefaults() {
 	customization.fieldRadius = parseFloat(readVar('--radius-field')) || 1;
 	customization.border = parseFloat(readVar('--border')) || 0.5;
 	customization.size = parseFloat(readVar('--size-field')) || 0.25;
-	customization.cardOpacity = 100;
+	customization.cardOpacity = 80;
 	customization.siteImageOpacity = 65;
 	customization.cardImageOpacity = 100;
 	customization.gradient = false;
 	customization.gradientFrom = customization.primary;
 	customization.gradientTo = toHex(readVar('--color-accent'));
 	customization.gradientAngle = 180;
+	customization.gradientOpacity = 100;
+	customization.cardGradientOpacity = 100;
 	customization.cardGradient = false;
 	customization.cardGradientFrom = customization.primary;
 	customization.cardGradientTo = toHex(readVar('--color-accent'));
@@ -140,12 +146,12 @@ export function applyCustomization() {
 	style.setProperty('--card-image-opacity', String(customization.cardImageOpacity / 100));
 	style.setProperty(
 		'--site-gradient',
-		`linear-gradient(${customization.gradientAngle}deg, ${customization.gradientFrom}, ${customization.gradientTo})`
+		`linear-gradient(${customization.gradientAngle}deg, color-mix(in srgb, ${customization.gradientFrom} ${customization.gradientOpacity}%, transparent), color-mix(in srgb, ${customization.gradientTo} ${customization.gradientOpacity}%, transparent))`
 	);
 	root().toggleAttribute('data-site-gradient', customization.gradient);
 	style.setProperty(
 		'--card-gradient',
-		`linear-gradient(${customization.cardGradientAngle}deg, color-mix(in srgb, ${customization.cardGradientFrom} ${customization.cardOpacity}%, transparent), color-mix(in srgb, ${customization.cardGradientTo} ${customization.cardOpacity}%, transparent))`
+		`linear-gradient(${customization.cardGradientAngle}deg, color-mix(in srgb, ${customization.cardGradientFrom} ${customization.cardGradientOpacity}%, transparent), color-mix(in srgb, ${customization.cardGradientTo} ${customization.cardGradientOpacity}%, transparent))`
 	);
 	root().toggleAttribute('data-card-gradient', customization.cardGradient);
 	style.setProperty('--depth', customization.depth ? '1' : '0');
