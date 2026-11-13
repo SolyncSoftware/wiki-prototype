@@ -145,8 +145,16 @@
 	pointer-events: none;
 }
 
+:root[data-site-bg] body {
+	background: transparent;
+}
+
 :root[data-site-gradient] body {
 	background: var(--site-gradient), var(--color-base-100);
+}
+
+:root[data-site-bg][data-site-gradient] body {
+	background: var(--site-gradient);
 }
 
 :root {
