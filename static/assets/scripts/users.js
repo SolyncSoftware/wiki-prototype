@@ -212,7 +212,7 @@ const updateUserData = async () => {
 					content:
 						'Failed to login as you are not in the server!\nClick this toast to open the Discord server invite in a new tab!',
 					style: 'error',
-					link: 'https://discord.gg/camellia',
+					link: 'https://discord.gg/nUeRyRtDYC',
 					linkTarget: '_blank'
 				});
 				Functions.Cookie.set('wiki_auth', JSON.stringify({}), 0);
